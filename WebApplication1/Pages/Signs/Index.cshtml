@@ -1,0 +1,78 @@
+﻿@page
+@model WebApplication1.Pages.Signs.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>开始你的抽签吧。总共21签9上8中4下，看你什么时候能够三连上签</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Sign[0].field1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sign[0].field2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sign[0].field3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sign[0].field4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sign[0].field5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sign[0].field6)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sign[0].field7)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sign[0].field8)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Sign) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.field1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.field2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.field3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.field4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.field5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.field6)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.field7)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.field8)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
